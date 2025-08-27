@@ -43,6 +43,17 @@ export default function Navbar() {
             <FileText className="w-4 h-4" />
             <span>Try Exam</span>
           </div>
+          <div 
+            className={`flex items-center gap-1 px-3 py-2 rounded-lg cursor-pointer transition-all ${
+              location.pathname === "/big-exam" 
+                ? "bg-purple-500/20 text-purple-300 border border-purple-500/30" 
+                : "hover:bg-gray-700/50 hover:text-cyan-300"
+            }`}
+            onClick={() => navigate("/big-exam")}
+          >
+            <FileText className="w-4 h-4" />
+            <span>Try Big Exam</span>
+          </div>
         </nav>
       </div>
     </header>
