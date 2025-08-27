@@ -1,6 +1,31 @@
 import { useNavigate } from "react-router-dom";
 import { Brain, BookOpen, Users, Rocket, Clock, BarChart3, Mic, Smartphone, Award, UserCheck, Bookmark, Zap } from "lucide-react";
-
+import { AnimatedTestimonials } from "../components/ui/animated-testimonials";
+import { LampDemo } from "../components/Lamp";
+import GifSection from "../components/GifSection";
+  const testimonials = [
+    {
+      quote:
+        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+      name: "Shubhendu Halder",
+      designation: "Leader",
+      src: "https://avatars.githubusercontent.com/u/141364632?v=4",
+    },
+    {
+      quote:
+        "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
+      name: "Akash Das",
+      designation: "Member",
+      src: "https://avatars.githubusercontent.com/u/228867924?v=4",
+    },
+    {
+      quote:
+        "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
+      name: "Asfak Ulla Molla",
+      designation: "Member",
+      src: "https://avatars.githubusercontent.com/u/193912692?v=4",
+    },
+  ];
 export default function Home() {
   const navigate = useNavigate();
 
@@ -106,7 +131,7 @@ export default function Home() {
 
       {/* Who It's For */}
       <section className="py-20 relative z-10">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/30 via-gray-900/30 to-blue-900/30 -z-10"></div>
+        <div className="absolute inset-0 "></div>
         <h2 className="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-400">
           🎯 Who Is This For?
         </h2>
@@ -135,7 +160,7 @@ export default function Home() {
 
       {/* Final CTA */}
       <section className="text-center py-24 relative z-10">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-purple-600/20 -z-10"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-purple-600/20 -z-10"></div>
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             Start Your First AI Exam Today 🚀
@@ -149,8 +174,11 @@ export default function Home() {
           >
             Launch Exam Generator
           </button>
-        </div>
+        </div> */}
+      <LampDemo/> 
       </section>
+      <AnimatedTestimonials testimonials={testimonials} />
+      <GifSection/>
 
       <style jsx>{`
         @keyframes pulse-slow {
