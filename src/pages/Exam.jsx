@@ -109,7 +109,7 @@ const ExamPage = () => {
     setUserAnswers([]);
     setShowResults(false);
 
-    const prompt = `Generate ${questionCount} ${difficulty} multiple-choice questions about "${topic}". 
+    const prompt = `Generate ${questionCount} ${difficulty} multiple-choice questions about "${topic}" Every Time Try Somthing New Question. 
     Format each question as:
     Q: [question text]
     A: [option]

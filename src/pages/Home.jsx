@@ -1,31 +1,46 @@
 import { useNavigate } from "react-router-dom";
-import { Brain, BookOpen, Users, Rocket, Clock, BarChart3, Mic, Smartphone, Award, UserCheck, Bookmark, Zap } from "lucide-react";
+import { Cover } from "../components/ui/cover";
+import {
+  Brain,
+  BookOpen,
+  Users,
+  Rocket,
+  Clock,
+  BarChart3,
+  Mic,
+  Smartphone,
+  Award,
+  UserCheck,
+  Bookmark,
+  Zap,
+} from "lucide-react";
 import { AnimatedTestimonials } from "../components/ui/animated-testimonials";
 import { LampDemo } from "../components/Lamp";
 import GifSection from "../components/GifSection";
-  const testimonials = [
-    {
-      quote:
-        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-      name: "Shubhendu Halder",
-      designation: "Leader",
-      src: "https://avatars.githubusercontent.com/u/141364632?v=4",
-    },
-    {
-      quote:
-        "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-      name: "Akash Das",
-      designation: "Member",
-      src: "https://avatars.githubusercontent.com/u/228867924?v=4",
-    },
-    {
-      quote:
-        "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-      name: "Asfak Ulla Molla",
-      designation: "Member",
-      src: "https://avatars.githubusercontent.com/u/193912692?v=4",
-    },
-  ];
+import { Feature } from "../components/Feature";
+const testimonials = [
+  {
+    quote:
+      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+    name: "Shubhendu Halder",
+    designation: "Leader",
+    src: "https://avatars.githubusercontent.com/u/141364632?v=4",
+  },
+  {
+    quote:
+      "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
+    name: "Akash Das",
+    designation: "Member",
+    src: "https://avatars.githubusercontent.com/u/228867924?v=4",
+  },
+  {
+    quote:
+      "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
+    name: "Asfak Ulla Molla",
+    designation: "Member",
+    src: "https://avatars.githubusercontent.com/u/193912692?v=4",
+  },
+];
 export default function Home() {
   const navigate = useNavigate();
 
@@ -34,17 +49,31 @@ export default function Home() {
       {/* Background elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-600 rounded-full filter blur-3xl opacity-20 animate-pulse-slow"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-600 rounded-full filter blur-3xl opacity-20 animate-pulse-slow" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/4 w-60 h-60 bg-indigo-600 rounded-full filter blur-3xl opacity-20 animate-pulse-slow" style={{animationDelay: '4s'}}></div>
+        <div
+          className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-600 rounded-full filter blur-3xl opacity-20 animate-pulse-slow"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/4 w-60 h-60 bg-indigo-600 rounded-full filter blur-3xl opacity-20 animate-pulse-slow"
+          style={{ animationDelay: "4s" }}
+        ></div>
       </div>
-      
+
       {/* Hero */}
       <section className="relative overflow-hidden z-10">
         <div className="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
           {/* Left */}
           <div className="">
-            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
-              Master Any Topic <br /> With AI Exams 🚀
+            <h1 className="text-4xl md:text-4xl lg:text-6xl font-semibold max-w-7xl mx-auto mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white leading-tight">
+              Master Any Topic
+              <br /> With{" "}
+              <Cover>
+                {" "}
+                <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                  {" "}
+                  AI Exams
+                </span>
+              </Cover>
             </h1>
             <p className="mt-6 text-lg text-gray-300">
               Generate quizzes in seconds. Learn smarter, prepare faster, and
@@ -52,13 +81,13 @@ export default function Home() {
             </p>
             <div className="mt-8 flex gap-4 flex-wrap">
               <button
-                className="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-xl shadow-lg hover:opacity-90 transition transform hover:scale-105"
                 onClick={() => navigate("/exam")}
+                className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
               >
-                Try Exam Now
-              </button>
-              <button className="px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl hover:bg-white/20 transition transform hover:scale-105">
-                Learn More
+                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl tracking-wide">
+                  Try Exam Now 👉
+                </span>
               </button>
             </div>
           </div>
@@ -84,9 +113,21 @@ export default function Home() {
         </h2>
         <div className="flex justify-center gap-8 relative flex-wrap px-6">
           {[
-            { icon: BookOpen, title: "Choose Topic", desc: "Select any subject you want to test yourself on" },
-            { icon: Rocket, title: "Set Difficulty", desc: "Pick from Easy, Medium, or Hard levels" },
-            { icon: Brain, title: "Get Instant Quiz", desc: "AI generates personalized questions in seconds" },
+            {
+              icon: BookOpen,
+              title: "Choose Topic",
+              desc: "Select any subject you want to test yourself on",
+            },
+            {
+              icon: Rocket,
+              title: "Set Difficulty",
+              desc: "Pick from Easy, Medium, or Hard levels",
+            },
+            {
+              icon: Brain,
+              title: "Get Instant Quiz",
+              desc: "AI generates personalized questions in seconds",
+            },
           ].map((step, i) => (
             <div
               key={i}
@@ -105,29 +146,7 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section className="py-20 relative z-10">
-        <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-          ⚙️ Features
-        </h2>
-        <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-6 px-6">
-          {[
-            { icon: Mic, text: "Voice Input (soon)" },
-            { icon: BarChart3, text: "Multiple Difficulty Levels" },
-            { icon: Zap, text: "Instant AI Answers" },
-            { icon: Clock, text: "Timer Based Mode" },
-            { icon: Smartphone, text: "Mobile Friendly" },
-            { icon: Bookmark, text: "No Signup Needed" },
-          ].map((f, i) => (
-            <div
-              key={i}
-              className="p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-lg hover:bg-white/10 transition text-center flex flex-col items-center"
-            >
-              <f.icon className="w-8 h-8 text-blue-400 mb-3" />
-              <p className="text-lg font-medium text-gray-200">{f.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Feature/>
 
       {/* Who It's For */}
       <section className="py-20 relative z-10">
@@ -137,10 +156,26 @@ export default function Home() {
         </h2>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 px-6">
           {[
-            { icon: BookOpen, title: "📚 Students", desc: "Prepare exams faster & smarter." },
-            { icon: UserCheck, title: "👨‍🏫 Teachers", desc: "Create instant assessments." },
-            { icon: Award, title: "🧑‍💼 Professionals", desc: "Refresh skills for interviews." },
-            { icon: Brain, title: "🌍 Learners", desc: "Explore knowledge on any topic." },
+            {
+              icon: BookOpen,
+              title: "📚 Students",
+              desc: "Prepare exams faster & smarter.",
+            },
+            {
+              icon: UserCheck,
+              title: "👨‍🏫 Teachers",
+              desc: "Create instant assessments.",
+            },
+            {
+              icon: Award,
+              title: "🧑‍💼 Professionals",
+              desc: "Refresh skills for interviews.",
+            },
+            {
+              icon: Brain,
+              title: "🌍 Learners",
+              desc: "Explore knowledge on any topic.",
+            },
           ].map((a, i) => (
             <div
               key={i}
@@ -150,7 +185,9 @@ export default function Home() {
                 <a.icon className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h4 className="text-xl font-semibold mb-2 text-gray-100">{a.title}</h4>
+                <h4 className="text-xl font-semibold mb-2 text-gray-100">
+                  {a.title}
+                </h4>
                 <p className="text-gray-300">{a.desc}</p>
               </div>
             </div>
@@ -175,15 +212,20 @@ export default function Home() {
             Launch Exam Generator
           </button>
         </div> */}
-      <LampDemo/> 
+        <LampDemo />
       </section>
       <AnimatedTestimonials testimonials={testimonials} />
-      <GifSection/>
+      <GifSection />
 
       <style jsx>{`
         @keyframes pulse-slow {
-          0%, 100% { opacity: 0.2; }
-          50% { opacity: 0.3; }
+          0%,
+          100% {
+            opacity: 0.2;
+          }
+          50% {
+            opacity: 0.3;
+          }
         }
         .animate-pulse-slow {
           animation: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
