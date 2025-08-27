@@ -112,7 +112,7 @@ const ExamPage = () => {
     const prompt = `Generate ${questionCount} ${difficulty} multiple-choice questions about "${topic}". 
     Format each question as:
     Q: [question text]
-    A: [correct answer]
+    A: [option]
     B: [option]
     C: [option]
     D: [option]
